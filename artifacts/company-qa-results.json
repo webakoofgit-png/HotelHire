@@ -1,0 +1,23 @@
+{
+  "passed": 17,
+  "results": [
+    "Desktop: category tiles, filters and nine company cards render",
+    "Pagination changes result cards",
+    "Business type filter works and resets pagination",
+    "Top category tiles filter the directory",
+    "Following collection reflects saved employers",
+    "Search matches companies across locations",
+    "Company sorting control works",
+    "Empty state and clear filters restore results",
+    "Company card opens existing company profile",
+    "Responsive company directory: 360px",
+    "Responsive company directory: 375px",
+    "Mobile drawer filters and closes correctly",
+    "Responsive company directory: 390px",
+    "Responsive company directory: 768px",
+    "Responsive company directory: 1024px",
+    "Responsive company directory: 1280px",
+    "Responsive company directory: 1440px"
+  ],
+  "errors": []
+}
