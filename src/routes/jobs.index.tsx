@@ -1,16 +1,13 @@
-﻿import { createFileRoute, useNavigate } from "@tanstack/react-router";
+import { useJobSearch } from "@/lib/navigation";
+import { useNavigate } from "@/lib/navigation";
 import { useState, useEffect } from "react";
 import { MapPin, Search, SlidersHorizontal, LayoutGrid, List } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { JobCard, Layout, useDemo } from "@/components/hotelhire/platform";
 import { cities, departments } from "@/lib/demo-data";
 import { SponsoredBanner } from "@/components/hotelhire/public-pages";
-export const Route = createFileRoute("/jobs/")({
-  head: () => ({ meta: [{ title: "Find Hospitality Jobs — HotelHire Pro" }] }),
-  component: Jobs,
-});
-function Jobs() {
-  const s = Route.useSearch(),
+export default function Jobs() {
+  const s = useJobSearch(),
     navigate = useNavigate(),
     d = useDemo();
   const [q, setQ] = useState(s.q ?? ""),

@@ -1,4 +1,4 @@
-﻿import { Link, useLocation } from "@tanstack/react-router";
+﻿import { Link, useLocation } from "@/lib/navigation";
 import { useState, type ReactNode } from "react";
 export { DemoProvider, useDemo } from "@/lib/demo-store";
 import { useDemo } from "@/lib/demo-store";

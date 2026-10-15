@@ -1,4 +1,5 @@
-﻿import { createFileRoute, Link } from "@tanstack/react-router";
+import { useParams } from "@/lib/navigation";
+import { Link } from "@/lib/navigation";
 import { useState } from "react";
 import { Bookmark, CheckCircle2, ArrowLeft, Share2, Flag, CalendarDays } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -6,12 +7,8 @@ import { Layout, CompanyMark, JobCard, useDemo } from "@/components/hotelhire/pl
 import { SponsoredBanner } from "@/components/hotelhire/public-pages";
 import { uid } from "@/lib/demo-store";
 import { toast } from "sonner";
-export const Route = createFileRoute("/jobs/$id")({
-  head: () => ({ meta: [{ title: "Hospitality Opportunity — HotelHire Pro" }] }),
-  component: Detail,
-});
-function Detail() {
-  const { id } = Route.useParams(),
+export default function Detail() {
+  const { id } = useParams(),
     d = useDemo(),
     job = d.jobs.find((j) => j.id === id && j.status === "Published");
   const applied = d.applications.some((a) => a.jobId === id && a.candidateId === "me");

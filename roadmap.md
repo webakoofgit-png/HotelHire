@@ -1,6 +1,6 @@
 ﻿# HotelHire Pro
 
-- [x] Preserve the premium HotelHire design and TanStack/TypeScript architecture.
+- [x] Preserve the premium HotelHire design and React/Vite/TypeScript architecture.
 - [x] Public discovery, company profiles, categories, locations, editorial, information and demo account screens.
 - [x] Advanced job search, sorting, pagination, grid/list view and responsive filters.
 - [x] Shared job creation, editing, deletion and public publication.

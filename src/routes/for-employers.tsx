@@ -1,26 +1,9 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "@/lib/navigation";
 import { ArrowUpRight, BriefcaseBusiness, Users, LayoutDashboard, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Layout } from "@/components/hotelhire/platform";
 import teamImage from "@/assets/hospitality-team.jpg";
-export const Route = createFileRoute("/for-employers")({
-  head: () => ({
-    meta: [
-      { title: "Hire Hospitality Staff — HotelHire Pro" },
-      {
-        name: "description",
-        content:
-          "Discover hospitality recruitment tools for hotel owners, restaurants and HR teams.",
-      },
-      { property: "og:title", content: "Hire Hospitality Staff — HotelHire Pro" },
-      { property: "og:description", content: "Build a team your guests will love." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
-  component: Employers,
-});
-function Employers() {
+export default function Employers() {
   return (
     <Layout>
       <section className="hero">

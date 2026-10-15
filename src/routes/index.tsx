@@ -1,5 +1,5 @@
 ﻿import { HomeExtras } from "@/components/hotelhire/home-extras";
-import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
+import { Link, useNavigate } from "@/lib/navigation";
 import { useState } from "react";
 import {
   ArrowRight,
@@ -25,26 +25,6 @@ import {
 } from "@/components/hotelhire/platform";
 import { SponsoredBanner } from "@/components/hotelhire/public-pages";
 import teamImage from "@/assets/hospitality-team.jpg";
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "HotelHire Pro — Find Your Next Hospitality Opportunity" },
-      {
-        name: "description",
-        content:
-          "Find rewarding hotel, restaurant and resort jobs with verified hospitality employers across India.",
-      },
-      { property: "og:title", content: "HotelHire Pro — Your Next Hospitality Opportunity" },
-      {
-        property: "og:description",
-        content: "Discover careers with leading hospitality employers across India.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
-  component: Index,
-});
 const categories = [
   { name: "Chef & Kitchen", count: 286, icon: ChefHat },
   { name: "Front Office", count: 184, icon: ConciergeBell },
@@ -53,7 +33,7 @@ const categories = [
   { name: "Hotel Management", count: 156, icon: Building2 },
   { name: "Restaurant Service", count: 247, icon: UtensilsCrossed },
 ];
-function Index() {
+export default function Index() {
   const { jobs: allJobs, companies: allCompanies, website } = useDemo();
   const jobs = allJobs.filter((j) => j.status === "Published");
   const companies = allCompanies.slice(0, 6);

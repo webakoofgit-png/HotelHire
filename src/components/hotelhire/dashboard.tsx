@@ -1,6 +1,6 @@
 ﻿import { useState, type ReactNode } from "react";
 import { ContentSettings, TaxonomyManager } from "./content-settings";
-import { Link, useNavigate } from "@tanstack/react-router";
+import { Link, useNavigate } from "@/lib/navigation";
 import { useEffect } from "react";
 import {
   LayoutDashboard,

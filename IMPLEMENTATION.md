@@ -1,6 +1,6 @@
 ﻿# HotelHire Pro implementation
 
-The existing TanStack Start, TypeScript, semantic tokens and HotelHire public layout are retained. This is a frontend demonstration with fictional recruitment records and shared in-memory state.
+The application uses React, Vite, React Router and TypeScript. The semantic tokens and HotelHire public layout are retained. This is a frontend demonstration with fictional recruitment records and shared in-memory state.
 
 ## Entry points
 
@@ -41,7 +41,7 @@ Before real users or candidate data are introduced, connect authenticated backen
 
 - `npm test`: routing, data integrity, shared applications/statuses, saved jobs, plan changes, published-job fields, fresh-session reset and match-score explanations.
 - `node node_modules/typescript/bin/tsc --noEmit`: strict TypeScript validation.
-- `npm run build`: client, SSR and Nitro production output.
+- `npm run build`: a static browser application in `dist/`. Hosting must serve `index.html` as the fallback for application routes. Route metadata is rendered in the browser.
 - `scripts/browser-qa.mjs`: local Chromium DevTools checks for job creation, application tracking, role modules, public navigation, responsive layouts, mobile controls and shared admin pricing. It expects an existing local DevTools endpoint on port 9333 and the development server on port 4175.
 - `artifacts/qa-results.json` and the screenshots in `artifacts/` capture the browser results.
 

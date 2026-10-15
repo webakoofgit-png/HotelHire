@@ -1,21 +1,12 @@
-# Routes
+﻿# Page modules
 
-TanStack Start uses **file-based routing**. Every `.tsx` file in this directory
-defines a route. Do **not** create `src/pages/`, `src/routes/_app/index.tsx`, or
-`app/layout.tsx` — those are Next.js / Remix conventions. The only root layout
-is `src/routes/__root.tsx`.
+This folder contains React page components. Routes are declared explicitly in `src/router.tsx` using React Router. File names do not register routes and no generated route tree is required.
 
-## Conventions
+- `index.tsx`: homepage
+- `jobs.index.tsx`, `jobs.$id.tsx`: job search and job details
+- `companies.tsx`, `companies_.$id.tsx`: company discovery and profiles
+- `$page.tsx`, `blog.$id.tsx`: public information pages and journal articles
+- `workspace.tsx`: query-based role and module selection
+- `candidate.$.tsx`, `employer.$.tsx`, `recruiter.$.tsx`, `admin.$.tsx`: direct role URLs
 
-| File                     | URL                                                     |
-| ------------------------ | ------------------------------------------------------- |
-| `index.tsx`              | `/`                                                     |
-| `about.tsx`              | `/about`                                                |
-| `users/index.tsx`        | `/users`                                                |
-| `users/$id.tsx`          | `/users/:id` (dynamic — bare `$`, no curly braces)      |
-| `posts/{-$category}.tsx` | `/posts/:category?` (optional segment)                  |
-| `files/$.tsx`            | `/files/*` (splat — read via `_splat` param, never `*`) |
-| `_layout.tsx`            | layout route (renders children via `<Outlet />`)        |
-| `__root.tsx`             | app shell — wraps every page; preserve `<Outlet />`     |
-
-`routeTree.gen.ts` is auto-generated. Don't edit it by hand.
+The existing filenames are retained for continuity. Dynamic URLs use React Router parameters (`:id`) and wildcard segments (`*`). App links and query parameters are composed by `src/lib/navigation.tsx`. Shared state is mounted above all routes, so changing pages preserves the demo session.

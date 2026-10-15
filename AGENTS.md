@@ -10,6 +10,6 @@
 <!-- LOVABLE:END -->
 
 ## Architecture
-- Keep the existing TanStack Start router and TypeScript integration; platform constraints require it even when reference briefs request another framework.
+- Use React, Vite, React Router and TypeScript, following the user's explicit router migration request. Keep deep links working through the hosting provider's SPA fallback.
 - Store illustrative recruitment data in a client-safe data module and use a shared in-memory demo provider for saved jobs; this separates frontend prototypes from production authentication and persistence.
 - Use global semantic tokens and the shared HotelHire layout for public surfaces; this keeps the recruitment experience visually consistent.

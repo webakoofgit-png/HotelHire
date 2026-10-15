@@ -1,30 +1,10 @@
-﻿import { createFileRoute, Link } from "@tanstack/react-router";
+﻿import { Link } from "@/lib/navigation";
 import { useState } from "react";
 import { Check, CheckCircle2, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Layout } from "@/components/hotelhire/platform";
 import { useDemo } from "@/lib/demo-store";
-export const Route = createFileRoute("/pricing")({
-  head: () => ({
-    meta: [
-      { title: "Employer Plans & Pricing — HotelHire Pro" },
-      {
-        name: "description",
-        content:
-          "Compare illustrative recruitment plans for independent hotels and multi-property hospitality teams.",
-      },
-      { property: "og:title", content: "Employer Plans — HotelHire Pro" },
-      {
-        property: "og:description",
-        content: "The right hiring tools for your hospitality business.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
-  component: Pricing,
-});
-function Pricing() {
+export default function Pricing() {
   const { plans, setPlan, log } = useDemo();
   const [selected, setSelected] = useState("");
   return (

@@ -1,4 +1,4 @@
-﻿import { createFileRoute, Link } from "@tanstack/react-router";
+﻿import { Link } from "@/lib/navigation";
 import { useState } from "react";
 import {
   ArrowRight,
@@ -33,22 +33,7 @@ import {
 import { CompanyMark, Layout, useDemo } from "@/components/hotelhire/platform";
 import { businessTypes, type Company } from "@/lib/demo-data";
 import { companyInsights, companySizes } from "@/lib/company-discovery";
-import directoryCss from "@/company-directory.css?url";
 import { SponsoredBanner } from "@/components/hotelhire/public-pages";
-export const Route = createFileRoute("/companies")({
-  head: () => ({
-    links: [{ rel: "stylesheet", href: directoryCss }],
-    meta: [
-      { title: "Discover Companies Hiring in Hospitality — HotelHire Pro" },
-      {
-        name: "description",
-        content:
-          "Explore hospitality employers by business type, location, team size and open opportunities. Find a company where you belong.",
-      },
-    ],
-  }),
-  component: Companies,
-});
 type Filters = {
   cities: string[];
   types: string[];
@@ -72,7 +57,7 @@ const categoryTiles = [
   { name: "Cafés", value: "Café", icon: Coffee, tone: "rose" },
   { name: "Hospitality groups", value: "groups", icon: Building2, tone: "blue" },
 ];
-function Companies() {
+export default function Companies() {
   const d = useDemo();
   const [query, setQuery] = useState(""),
     [filters, setFilters] = useState<Filters>(emptyFilters),
